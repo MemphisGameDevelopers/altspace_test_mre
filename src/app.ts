@@ -92,18 +92,20 @@ export default class HelloWorld {
             animationName: 'GrowIn',
             keyframes: this.growAnimationData,
             events: []
-        })
+        });
 
         this.cube.createAnimation({
             animationName: 'ShrinkOut',
             keyframes: this.shrinkAnimationData,
             events: []
-        })
+        });
+
         this.cube.createAnimation({
             animationName: 'DoAFlip',
             keyframes: this.generateSpinKeyframes(1.0, Vector3.Right()),
             events: []
-        })
+        });
+        
         // Now that the text and its animation are all being set up, we can start playing
         // the animation.
         this.text.startAnimation('Spin');
