@@ -66,8 +66,6 @@ export default class HelloWorld {
             // Optionally, we also repeat the animation infinitely.
             wrapMode: AnimationWrapMode.Loop
         })
-            .catch(reason => this.context.logger.log('error', `Failed to create spin animation: ${reason}`));
-
         // Load a glTF model
         const cubePromise = Actor.CreateFromGLTF(this.context, {
             // at the given URL
@@ -95,22 +93,17 @@ export default class HelloWorld {
             keyframes: this.growAnimationData,
             events: []
         })
-            .catch(reason => this.context.logger.log('error', `Failed to create grow animation: ${reason}`));
 
         this.cube.createAnimation({
             animationName: 'ShrinkOut',
             keyframes: this.shrinkAnimationData,
             events: []
         })
-            .catch(reason => this.context.logger.log('error', `Failed to create shrink animation: ${reason}`));
-
         this.cube.createAnimation({
             animationName: 'DoAFlip',
             keyframes: this.generateSpinKeyframes(1.0, Vector3.Right()),
             events: []
         })
-            .catch(reason => this.context.logger.log('error', `Failed to create flip animation: ${reason}`));
-
         // Now that the text and its animation are all being set up, we can start playing
         // the animation.
         this.text.startAnimation('Spin');
