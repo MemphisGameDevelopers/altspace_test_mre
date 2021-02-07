@@ -94,36 +94,20 @@ export default class HelloWorld {
             animationName: 'GrowIn',
             keyframes: this.growAnimationData,
             events: []
-<<<<<<< HEAD
-        });
-=======
-        })
-            .catch(reason => this.context.logger.log('error', `Failed to create grow animation: ${reason}`));
->>>>>>> parent of 3ee7947... removed .catch callback
+        }).catch(reason => this.context.logger.log('error', `Failed to create grow animation: ${reason}`));
 
         this.cube.createAnimation({
             animationName: 'ShrinkOut',
             keyframes: this.shrinkAnimationData,
             events: []
-<<<<<<< HEAD
-        });
-=======
-        })
-            .catch(reason => this.context.logger.log('error', `Failed to create shrink animation: ${reason}`));
->>>>>>> parent of 3ee7947... removed .catch callback
+        }).catch(reason => this.context.logger.log('error', `Failed to create shrink animation: ${reason}`));
 
         this.cube.createAnimation({
             animationName: 'DoAFlip',
             keyframes: this.generateSpinKeyframes(1.0, Vector3.Right()),
             events: []
-<<<<<<< HEAD
-        });
-        
-=======
-        })
-            .catch(reason => this.context.logger.log('error', `Failed to create flip animation: ${reason}`));
+        }).catch(reason => this.context.logger.log('error', `Failed to create flip animation: ${reason}`));
 
->>>>>>> parent of 3ee7947... removed .catch callback
         // Now that the text and its animation are all being set up, we can start playing
         // the animation.
         this.text.startAnimation('Spin');
